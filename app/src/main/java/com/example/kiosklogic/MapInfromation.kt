@@ -81,6 +81,9 @@ class MapInfromation {
                 num = readLine()?.toInt()
             } catch (e: NumberFormatException) {
                 println("숫자가 아닙니다. 0 ~ 5를 입력해주세요")
+                continue
             }
+            if (num in 0..5) break
+            else println("유효한 값이 아닙니다. 0 ~ 5를 입력해주세요")
         }
 }
