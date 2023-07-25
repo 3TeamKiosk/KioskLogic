@@ -74,4 +74,6 @@ class MapInfromation {
                     ".:!;           :~      -:;,  ~~.,                         ,:                     -~                 \n"
         )
         println("[1]엑스역 [2]펙토역 [3]패트역 [4]매트역 [5]로눔역 [0]취소")
+        var num: Int?
+                num = readLine()?.toInt()
 }
