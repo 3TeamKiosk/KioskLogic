@@ -1,7 +1,8 @@
 package com.example.kiosklogic
 
 fun mapInformationAdmin() {
-    val information = MapInformationData()
+//    val information = MapInformationData()
+    val information = MapInformationData.getInstance()
     println("=== 관리자 모드로 실행하였습니다. ===")
     while (true) {
         print("현재 역: ")
@@ -11,6 +12,7 @@ fun mapInformationAdmin() {
         println("\n[1]역이름 변경 [2]역설명 변경 [3]현 자전거 수 변경 [4]메인 메뉴")
         val input = readOnlyInt("입력 : ", 4)
         if (input == 4) {
+//            mapInformation()  // main으로 돌아가기
             println("메인으로 돌아갑니다.")
             continue
         }
@@ -18,7 +20,7 @@ fun mapInformationAdmin() {
             println("유효한 값이 아닙니다. 1 ~ 3을 입력해주세요.")
             continue
         }
-        val fixed = readOnlyInt("변경하는 역 번호 : ", information.stationInformation["name"]?.size)
+        val fixed = readOnlyInt("변경하는 역 번호 : ", 5) -1
         when (input) {
             1 -> {
                 println("현 역이름 : ${fixed.let { information.getStationName(it) }}")

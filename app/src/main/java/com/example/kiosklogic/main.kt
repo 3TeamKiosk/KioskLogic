@@ -3,5 +3,5 @@ import com.example.kiosklogic.mapInformationAdmin
 
 fun main(){
     println("main")
-    mapInformationAdmin()
+    mapInformation()
 }
