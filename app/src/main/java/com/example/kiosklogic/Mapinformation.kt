@@ -1,7 +1,7 @@
 package com.example.kiosklogic
 
 fun mapInformation() {
-    val information = MapInformationData()
+    val information = MapInformationData.getInstance()
     var input: Int?
     println("지도를 선택하고 역을 선택하시면 자세하게 안내해드립니다.")
     println(    // 역 위치를 표시하는 지도
@@ -78,8 +78,9 @@ fun mapInformation() {
             else println("유효한 값이 아닙니다. 0 ~ 5를 입력해주세요")  // 0~6의 숫자가 아닐 시 알리기
         }
         if (input == 0) {
-            print("main으로")
-            continue// 0 취소 버튼을 클릭 시 main으로 돌아가기
+//            mapInformationAdmin()   // 0 취소 버튼을 클릭 시 main으로 돌아가기
+            println("메인으로 돌아갑니다.")
+            continue
         }
         if (input == 6) for (i in 1..5) println(information.getStationInformation(i) + "\n")  // 6은 모든 역의 정보를 가져오기
         else println(input?.let { information.getStationInformation(it) } + "\n") // 1~5 선택한 역 정보 가져오기

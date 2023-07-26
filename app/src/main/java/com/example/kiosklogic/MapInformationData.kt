@@ -1,6 +1,16 @@
 package com.example.kiosklogic
 
 class MapInformationData : MapInformationInterface {
+    companion object {
+        @Volatile private var instance: MapInformationData? = null
+
+        fun getInstance(): MapInformationData {
+            return instance ?: synchronized(this) {
+                instance ?: MapInformationData().also { instance = it }
+            }
+        }
+    }
+
     var stationName: MutableList<String> = mutableListOf("엑스", "펙토", "패트", "매트", "로눔")
     var stationDescription: MutableList<String> = mutableListOf(
         "지도상 11시 방향",
@@ -10,11 +20,6 @@ class MapInformationData : MapInformationInterface {
         "지도상 3시 방향",
     )
     var bicycleCount: MutableList<Int> = mutableListOf(3, 1, 5, 6, 3)
-    var stationInformation: MutableMap<String, MutableList<Any>> = mutableMapOf(
-        "name" to stationName.toMutableList(),
-        "description" to stationDescription.toMutableList(),
-        "bicycleCount" to bicycleCount.toMutableList(),
-    )
 
     override fun setStationName(index: Int, name: String) {  // 역 이름 변경 (관리자모드)
         stationName[index] = name
@@ -41,8 +46,8 @@ class MapInformationData : MapInformationInterface {
     }
 
     override fun getStationInformation(index: Int): String { // 역 설명 이름&위치설명&사용가능한 자전거 수
-        return "${index}번째 역은 ${stationInformation["name"]?.get(index - 1)}역입니다.\n" +
-                "위치는 ${stationInformation["description"]?.get(index - 1)}에 위치해 있습니다.\n" +
-                "현재 사용가능한 자전거 수는 ${stationInformation["bicycleCount"]?.get(index - 1)}개입니다."
+        return "${index}번째 역은 ${stationName[index - 1]}역입니다.\n" +
+                "위치는 ${stationDescription[index - 1]}에 위치해 있습니다.\n" +
+                "현재 사용가능한 자전거 수는 ${bicycleCount[index - 1]}개입니다."
     }
 }
