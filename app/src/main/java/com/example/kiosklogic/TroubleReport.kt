@@ -11,6 +11,4 @@ interface TroubleReport <name, text>{
     fun troubleReportClear()
     // 맵에 특정 키가 포함되어 있는지 여부를 반환하는 함수
     fun containsName(key: name): Boolean
-    // 맵에 특정 값이 포함되어 있는지 여부를 반환하는 함수
-    fun containsText(value: text): Boolean
 }

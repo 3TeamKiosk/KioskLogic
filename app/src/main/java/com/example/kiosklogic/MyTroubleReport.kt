@@ -1,6 +1,6 @@
 package com.example.kiosklogic
 
-class MyTroubleReport: TroubleReport<String, String> {
+open class MyTroubleReport: TroubleReport<String, String> {
     // 내부적으로 MutableMap을 사용하여 데이터 관리
     private val map = mutableMapOf<String, String>()
 
@@ -25,14 +25,22 @@ class MyTroubleReport: TroubleReport<String, String> {
         map.clear()
     }
     fun showReport(){
-        map.forEach{ i-> println(i) }
+        map.forEach{ (name, text) -> println("신고자: $name   내용: $text") }
     }
     // 맵에 특정 키가 포함되어 있는지 여부를 반환하는 함수 구현
     override fun containsName(key: String): Boolean {
         return map.containsKey(key)
     }
-    // 맵에 특정 값이 포함되어 있는지 여부를 반환하는 함수 구현
-    override fun containsText(value: String): Boolean {
-        return map.containsValue(value)
+
+    // 데이터 클래스의 객체를 이용하여 데이터 삽입하기
+    fun addTroubleReport(data: ReportDataBase) {
+        map[data.reportName] = data.reportText
     }
+
+    // 데이터 클래스의 객체를 이용하여 모든 데이터 출력하기
+    fun showAllTroubleReports() {
+        map.forEach { (reportName, reportText) ->
+            println("신고자: $reportName, 내용: $reportText")
+        }
+}
 }
