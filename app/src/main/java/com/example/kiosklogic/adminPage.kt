@@ -1,6 +1,7 @@
 package com.example.kiosklogic
 
 fun main() {
+    var adData = AdminReport()
     var admin = UserReport()
     var adReport = AdminReport()
     val kioskName = "따릉이"

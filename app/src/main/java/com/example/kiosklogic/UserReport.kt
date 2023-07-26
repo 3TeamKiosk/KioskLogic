@@ -2,6 +2,7 @@ package com.example.kiosklogic
 
 class UserReport {
     fun main() {
+        var adData = AdminReport()
         val report = MyTroubleReport()
         var operate = true
 
@@ -25,8 +26,10 @@ class UserReport {
                     operate = false
                 }
 
-                text?.let { name?.let { it1 -> report.troubleReportInsertion(it1, it) } }
+//                text?.let { name?.let { it1 -> report.troubleReportInsertion(it1, it) } }
                 val reportData = ReportDataBase(name ?: "", text?:"")
+                report.troubleReportInsertion(name ?: "", text ?: "")
+                //adData.receiveReportData(reportData)
                 report.addTroubleReport(reportData)
             } catch (e: IllegalArgumentException) {
                 println("Error")
