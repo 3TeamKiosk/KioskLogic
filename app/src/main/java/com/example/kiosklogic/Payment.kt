@@ -1,7 +1,7 @@
 package com.example.kiosklogic
 
 class Payment {
-    var myMoney = 10000
+    var myMoney = 3000
     var moneyList = listOf(0, 1000, 2000, 3000, 4000, 5000)
     var rentalHour = readLine()!!.toInt()
 
@@ -17,9 +17,12 @@ class Payment {
             var change = myMoney - valueAtIndex
             if (check == 1) {
                 if (myMoney >= valueAtIndex) {
-                    println("[대여 후 잔액]: ${change}원입니다.")
+                    println("[나의 금액]: ${myMoney}원")
+                    println("[대여 후 나의 잔액]: ${change}원입니다.")
                 } else {
-                    println("금액이 부족합니다.")
+                    println("[나의 금액]: ${myMoney}원")
+                    println("${myMoney-valueAtIndex} 원 부족합니다.")
+                    println("결제 실패. 메인으로 이동합니다.")
                     return main()
                 }
             } else if (check == 2){
