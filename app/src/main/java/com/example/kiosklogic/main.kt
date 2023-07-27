@@ -22,42 +22,55 @@ fun main() {
 
     while (true) {
         var mode = modeData.getMode()
-        var changeMode: Map<String,List<Unit>> = mapOf(
-           "관리자" to listOf<Unit>(AdminCharge().changeMoney(), reportAdmin(myTroubleReport), englishLanguage(languageClass), mapInformationAdmin(), changeMode()),
-           "사용자" to listOf<Unit>(userCharge(), userReport(myTroubleReport), englishLanguage(languageClass), mapInformation(), changeMode())
+        var changeMode: Map<String, List<() -> Unit>> = mapOf(
+            "관리자" to listOf(
+                { AdminCharge().changeMoney() },
+                { reportAdmin(myTroubleReport) },
+                { englishLanguage(languageClass) },
+                { mapInformationAdmin() },
+                { changeMode() }
+            ),
+            "사용자" to listOf(
+                { userCharge() },
+                { userReport(myTroubleReport) },
+                { englishLanguage(languageClass) },
+                { mapInformation() },
+                { changeMode() }
+            )
         )
 
         var currentLocale = languageClass.getCurrentLocal()
-        var map: Map<Locale, List<String>> = mapOf(
-            Locale("ko") to listOf<String>("요금 및 결제", "고장 신고", "외국어", "지도 안내", "모드 변경"),
-            Locale("en") to listOf<String>(
-                "Fees and Paymentasdff",
-                "Breakdown Report",
-                "Foreign Language",
-                "Map Guide",
-                "Admin Mode"
+        val map: Map<Locale, Map<String, List<String>?>> = mapOf(
+            Locale("ko") to mapOf(
+                "사용자" to listOf("요금 및 결제", "고장 신고", "외국어", "지도 안내", "모드 변경"),
+                "관리자" to listOf("요금 변경", "신고 관리", "외국어", "역 설명 관리", "모드 변경")
             ),
+            Locale("en") to mapOf(
+                "사용자" to listOf(
+                    "Fees and Payment",
+                    "Breakdown Report",
+                    "Foreign Language",
+                    "Map Guide",
+                    "Admin Mode"
+                ),
+                "관리자" to listOf(
+                    "Fees Change",
+                    "Report Management",
+                    "Foreign Language",
+                    "Station Description Management",
+                    "Mode Change"
+                )
+            )
         )
-
-        for(i: Int in 0..map[currentLocale]!!.size-1) {
-            print("${i+1}.${map[currentLocale]?.get(i)} ")
+        println("===[메인메뉴]===")
+        for ((index, item) in map[currentLocale]?.get(mode)?.withIndex()
+            ?: emptyList<String>().withIndex()) {
+            print("${index + 1}.$item ")
         }
-
+        print("\n입력:")
         try {
             var select = readLine()!!.toInt()
-            changeMode[mode]?.get(select)
-//            when (select) {
-//                1 -> userCharge()
-//                2 -> userReport(myTroubleReport)
-//                3 -> englishLanguage(languageClass)
-//
-//                4 -> mapInformation()
-//                5 -> changeMode()
-//                else -> {
-//                    println("다시 선택해주세요.")
-//
-//                }
-//            }
+            changeMode[mode]?.get(select - 1)?.invoke()
         } catch (e: NumberFormatException) {
             println("숫자를 입력해주세요.")
         }
