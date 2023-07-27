@@ -5,12 +5,12 @@ import java.util.Locale
 
 
 fun main() {
-
+    val languageClass = LanguageClass()
     println("==========따릉이에 오신 것을 환영합니다==========")
 
 
     while (true) {
-        val languageClass = LanguageClass()
+
         var currentLocale = languageClass.getCurrentLocal()
         val kioskName = "따릉이"
         val a = when (currentLocale) {
@@ -40,13 +40,13 @@ fun main() {
         try {
             var select = readLine()!!.toInt()
             when (select) {
-                1 -> languageClass.goToFeesandPayment()
-                2 -> languageClass.goToBreakdownReportPage()
-                3 -> englishLanguage(languageClass)
+                1 -> println("languageClass.goToFeesandPayment()")
+                2 -> println("languageClass.goToBreakdownReportPage()")
+                3 -> println("englishLanguage(languageClass)")
 
 
-                4 -> languageClass.goToMapGuidePage()
-                5 -> languageClass.goToAdminMode()
+                4 -> println("languageClass.goToMapGuidePage()")
+                5 -> println("languageClass.goToAdminMode()")
                 else -> {
                     println("다시 선택해주세요.")
 
