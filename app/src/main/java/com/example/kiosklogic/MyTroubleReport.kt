@@ -26,16 +26,6 @@ class MyTroubleReport: TroubleReport<String, String> {
         map.clear()
     }
     fun showReports() {
-//        if (map.isEmpty()) {
-//            println("현재 등록된 고장 내역이 없습니다.")
-//        } else {
-//            println("==== 현재 등록된 고장 내역 ====")
-//            for ((name, text) in map) {
-//                println("이름: $name, 내용: $text")
-//            }
-//            println("=============================")
-//        }
-//    }
         map.forEach { (name, text) ->
             println("신고자: $name, 내용: $text")
         }
@@ -45,16 +35,4 @@ class MyTroubleReport: TroubleReport<String, String> {
     override fun containsName(key: String): Boolean {
         return map.containsKey(key)
     }
-
-    // 데이터 클래스의 객체를 이용하여 데이터 삽입하기
-    fun addTroubleReport(data: ReportDataBase) {
-        map[data.reportName] = data.reportText
-    }
-
-    // 데이터 클래스의 객체를 이용하여 모든 데이터 출력하기
-    fun showAllTroubleReports() {
-        map.forEach { (reportName, reportText) ->
-            println("신고자: $reportName, 내용: $reportText")
-        }
-}
 }

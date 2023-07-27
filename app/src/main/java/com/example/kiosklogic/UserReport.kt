@@ -1,17 +1,17 @@
 package com.example.kiosklogic
 
     fun userReport(report: MyTroubleReport) {
-        var operate = true
+
 
         println("이름과 고장 내역을 입력하세요")
-        while (operate) {
+        while (true) {
             print("이름 : ")
             try {
                 var name: String? = readLine() ?: throw  IllegalArgumentException("다시 입력해주세요.");
                 if (name == "q") {
                     // q를 누르면 입력 종료
                    // report.showAllTroubleReports()
-                   operate = false
+                    break
                 }
 
                 print("내용 : ")
@@ -20,13 +20,9 @@ package com.example.kiosklogic
                     // q를 누르면 입력 종료
                     //report.showAllTroubleReports()
 
-                    operate = false
-                    report.showReports()
+                    break
                 }
-
-                val reportData = ReportDataBase(name ?: "", text?:"")
                 report.troubleReportInsertion(name ?: "", text ?: "")
-                report.addTroubleReport(reportData)
             } catch (e: IllegalArgumentException) {
                 println("Error")
             }
