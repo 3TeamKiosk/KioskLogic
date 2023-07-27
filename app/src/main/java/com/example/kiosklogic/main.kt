@@ -77,32 +77,26 @@ fun main() {
     val myTroubleReport : MyTroubleReport = MyTroubleReport()
 
     while (true) {
-
         var currentLocale = languageClass.getCurrentLocal()
-        val kioskName = "따릉이"
-        val a = when (currentLocale) {
-            Locale("en") -> "Fees and Payment"
-            else -> "요금 및 결제"
+        var map: Map<Locale, List<String>> = mapOf(
+            Locale("ko") to listOf<String>("요금 및 결제", "고장 신고", "외국어", "지도 안내", "모드 변경"),
+            Locale("en") to listOf<String>(
+                "Fees and Paymentasdff",
+                "Breakdown Report",
+                "Foreign Language",
+                "Map Guide",
+                "Admin Mode"
+            ),
+        )
+
+
+        for(i: Int in 0..map[currentLocale]!!.size-1) {
+            print("${i+1}.${map[currentLocale]?.get(i)} ")
         }
 
-        val b = when (currentLocale) {
-            Locale("en") -> "Breakdown Report"
-            else -> "고장 신고"
-        }
-        val c = when (currentLocale) {
-            Locale("en") -> "Foreign Language"
-            else -> "외국어"
-        }
-        val d = when (currentLocale) {
-            Locale("en") -> "Map Guide"
-            else -> "지도 안내"
-        }
-        val e = when (currentLocale) {
-            Locale("en") -> "Admin Mode"
-            else -> "모드 변경"
-        }
-        val menuOptions = "1.$a 2.$b 3.$c 4.$d 5.$e"
-        println(menuOptions)
+
+
+
 
         try {
             var select = readLine()!!.toInt()
