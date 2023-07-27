@@ -1,25 +1,25 @@
 package com.example.kiosklogic
 
 class MapInformationData : MapInformationInterface {
-    companion object {
+    companion object {  // 싱글턴
         @Volatile private var instance: MapInformationData? = null
 
-        fun getInstance(): MapInformationData {
+        fun getInstance(): MapInformationData { // 다 같은 interface를 사용하게 유도
             return instance ?: synchronized(this) {
                 instance ?: MapInformationData().also { instance = it }
             }
         }
     }
 
-    var stationName: MutableList<String> = mutableListOf("엑스", "펙토", "패트", "매트", "로눔")
-    var stationDescription: MutableList<String> = mutableListOf(
+    var stationName: MutableList<String> = mutableListOf("엑스", "펙토", "패트", "매트", "로눔")  // 역 이름
+    var stationDescription: MutableList<String> = mutableListOf(    // 역 설명
         "지도상 11시 방향",
         "지도상 10시 방향",
         "지도 가운데에서 6시 방향으로 조금 아래에",
         "지도상 7시 방향",
         "지도상 3시 방향",
     )
-    var bicycleCount: MutableList<Int> = mutableListOf(3, 1, 5, 6, 3)
+    var bicycleCount: MutableList<Int> = mutableListOf(3, 1, 5, 6, 3)   // 역 사용가능한 자전거 수
 
     override fun setStationName(index: Int, name: String) {  // 역 이름 변경 (관리자모드)
         stationName[index] = name

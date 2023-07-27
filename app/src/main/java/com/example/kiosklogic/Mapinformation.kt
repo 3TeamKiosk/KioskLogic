@@ -1,7 +1,7 @@
 package com.example.kiosklogic
 
 fun mapInformation() {
-    val information = MapInformationData.getInstance()
+    val information = MapInformationData.getInstance()  // 싱글턴 인스턴스 불러오기
     var input: Int?
     println("지도를 선택하고 역을 선택하시면 자세하게 안내해드립니다.")
     println(    // 역 위치를 표시하는 지도
