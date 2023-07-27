@@ -24,7 +24,7 @@ class AdminCharge {
         }
     }
 
-    fun addOrUpdateItem(map: MutableMap<String, Int>) {
+    private fun addOrUpdateItem(map: MutableMap<String, Int>) {
         print("추가 및 수정하려는 시간을 입력하세요: ")
         val key = readLine() ?: return
 
@@ -35,19 +35,19 @@ class AdminCharge {
         println("${key} 시간 대여 금액이 추가 및 수정되었습니다.")
     }
 
-    fun deleteItem(map: MutableMap<String, Int>) {
+    private fun deleteItem(map: MutableMap<String, Int>) {
         print("삭제하려는 시간을 입력하세요: ")
         val key = readLine() ?: return
 
         if (map.containsKey(key)) {
             map.remove(key)
-            println("${key} 시간 대여 정보가 삭제되었습니다.")
+            println("$key 시간 대여 정보가 삭제되었습니다.")
         } else {
             println("${key}시간 대여 정보를 찾을 수 없습니다.")
         }
     }
 
-    fun printAllItems(map: Map<String, Int>) {
+    private fun printAllItems(map: Map<String, Int>) {
         if (map.isEmpty()) {
             println("정보가 없습니다.")
         } else {
