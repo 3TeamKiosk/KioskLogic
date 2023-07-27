@@ -2,14 +2,13 @@ import com.example.kiosklogic.LanguageClass
 import java.lang.NumberFormatException
 import java.util.Locale
 
-var currentLocale: Locale = Locale("ko")
 
 fun main() {
 
     println("==========따릉이에 오신 것을 환영합니다==========")
 
     val languageClass = LanguageClass()
-
+    var currentLocale = languageClass.getCurrentLocal()
     while (true) {
         val kioskName = "따릉이"
         val a = when (currentLocale) {
