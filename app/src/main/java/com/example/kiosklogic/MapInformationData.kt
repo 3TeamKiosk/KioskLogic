@@ -2,7 +2,8 @@ package com.example.kiosklogic
 
 class MapInformationData : MapInformationInterface {
     companion object {  // 싱글턴
-        @Volatile private var instance: MapInformationData? = null
+        @Volatile
+        private var instance: MapInformationData? = null
 
         fun getInstance(): MapInformationData { // 다 같은 interface를 사용하게 유도
             return instance ?: synchronized(this) {
@@ -12,7 +13,8 @@ class MapInformationData : MapInformationInterface {
     }
 
     var stationName: MutableList<String> = mutableListOf("엑스", "펙토", "패트", "매트", "로눔")  // 역 이름
-    var stationDescription: MutableList<String> = mutableListOf(    // 역 설명
+    var stationDescription: MutableList<String> = mutableListOf(
+        // 역 설명
         "지도상 11시 방향",
         "지도상 10시 방향",
         "지도 가운데에서 6시 방향으로 조금 아래에",
