@@ -22,11 +22,11 @@ class UserReport {
                 if (text == "q") {
                     // q를 누르면 입력 종료
                     //report.showAllTroubleReports()
-                    //report.showReport()
+
                     operate = false
                 }
-
-//                text?.let { name?.let { it1 -> report.troubleReportInsertion(it1, it) } }
+                report.showReport()
+                text?.let { name?.let { it1 -> report.troubleReportInsertion(it1, it) } }
                 val reportData = ReportDataBase(name ?: "", text?:"")
                 report.troubleReportInsertion(name ?: "", text ?: "")
                 //adData.receiveReportData(reportData)

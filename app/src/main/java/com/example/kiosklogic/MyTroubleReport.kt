@@ -25,8 +25,8 @@ open class MyTroubleReport: TroubleReport<String, String> {
         map.clear()
     }
     fun showReport(){
-        map.forEach{ (name, text) ->
-            println("신고자: $name   내용: $text") }
+        map.forEach{ (key, value) ->
+            println("신고자: $key   내용: $value") }
     }
     // 맵에 특정 키가 포함되어 있는지 여부를 반환하는 함수 구현
     override fun containsName(key: String): Boolean {
