@@ -7,6 +7,7 @@ import com.example.kiosklogic.userReport
 import java.lang.NumberFormatException
 import java.util.Locale
 package com.example.kiosklogic
+
 fun main() {
 
     println("[1]요금안내 [2]결제하기 [3]메인 [4]관리자모드")
@@ -34,7 +35,7 @@ fun main() {
                         charge.chargeInfo()
                     }
                 }
-            //메인에서 [2]결제하기로 바로갔을 때의 화면
+                //메인에서 [2]결제하기로 바로갔을 때의 화면
             } else if(checkNum1 == 2){
                 println("대여 시간을 입력해주세요")
                 var pay = PaymentInfo()
@@ -46,14 +47,14 @@ fun main() {
 //                    1,2,3,4,5 -> money.payment()
 //                    else -> println("다시 입력하세요.")
 //                }
-            // 메인으로 이동
+                // 메인으로 이동
             } else if(checkNum1 == 3){
                 println("요금안내 및 결제화면 메인으로 이동합니다")
                 return main()
-            // 관리자 모드로 이동
+                // 관리자 모드로 이동
             } else if(checkNum1 == 4){
-              var admin = AdminCharge()
-              admin.changeMoney()
+                var admin = AdminCharge()
+                admin.changeMoney()
             } else {
                 println("다시 입력하세요.")
                 return main()
@@ -116,9 +117,3 @@ fun main() {
         }
     }
 }
-
-
-
-
-
-

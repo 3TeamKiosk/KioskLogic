@@ -11,7 +11,7 @@ class PaymentInfo {
         )
 
         for ((k, v) in rentalTime) {
-            println("${k} ${v}")
+            println("$k $v")
         }
     }
 }
