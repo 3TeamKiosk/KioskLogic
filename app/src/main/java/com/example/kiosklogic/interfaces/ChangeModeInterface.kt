@@ -1,4 +1,4 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.interfaces
 
 interface ChangeModeInterface {
     fun getMode(): String

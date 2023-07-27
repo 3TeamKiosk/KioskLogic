@@ -1,4 +1,6 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.admin
+
+import com.example.kiosklogic.data.MapInformationData
 
 fun mapInformationAdmin() {
 //    val information = MapInformationData()
@@ -14,9 +16,9 @@ fun mapInformationAdmin() {
         if (input == 4) {   // 4이면 되돌아가기
 //            mapInformation()  // main으로 돌아가기
             println("메인으로 돌아갑니다.")
-            continue
+            break
         }
-        val fixed = readOnlyInt("변경하는 역 번호 : ", 5) -1   // 1~5 까지 역의 숫자를 받지만
+        val fixed = readOnlyInt("변경하는 역 번호 : ", 5) - 1   // 1~5 까지 역의 숫자를 받지만
         when (input) {  // 1~3 받아서 그에 해당하는 기능 실행
             1 -> {
                 println("현 역이름 : ${fixed.let { information.getStationName(it) }}")
@@ -40,7 +42,10 @@ fun mapInformationAdmin() {
     }
 }
 
-fun readOnlyInt(message: String, range: Int? = null): Int { // 오직 숫자만 무한 입력 유도&range 1~ range까지 0이면 if x
+fun readOnlyInt(
+    message: String,
+    range: Int? = null
+): Int { // 오직 숫자만 무한 입력 유도&range 1~ range까지 0이면 if x
     var input: Int? = null
     while (true) {
         print(message)

@@ -1,6 +1,9 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.user
 
-fun userCharge(){
+import com.example.kiosklogic.data.PaymentClass
+import com.example.kiosklogic.menu.admin.AdminCharge
+
+fun userCharge() {
     var payService = PaymentClass()
     println("[1]요금안내 [2]결제하기 [3]메인 [4]관리자모드")
     var checkNum1 = readLine()!!.toInt()
@@ -10,7 +13,7 @@ fun userCharge(){
             when (checkNum1) {
                 1 -> {
                     payService.chargeInfo()
-                    while(true){
+                    while (true) {
                         // 요금안내 화면 안에서 결제하기 or 메인으로 돌리는 코드
                         var checkNum2 = readLine()!!.toInt()
                         when (checkNum2) {
@@ -19,12 +22,13 @@ fun userCharge(){
                                 payService.paymentInfo()
                                 payService.payment()
 
+                            }
 
-                            }
                             2 -> {
-                                println("메인으로 이동합니다")
-                                return main()
+                                checkNum1 = 3 //메인으로
+                                break
                             }
+
                             else -> {
                                 println("다시 입력하세요")
                                 payService.chargeInfo()
@@ -33,6 +37,7 @@ fun userCharge(){
                     }
                     //메인에서 [2]결제하기로 바로갔을 때의 화면
                 }
+
                 2 -> {
                     println("대여 시간을 입력해주세요")
                     payService.paymentInfo()
@@ -42,20 +47,21 @@ fun userCharge(){
                     //                    1,2,3,4,5 -> money.payment()
                     //                    else -> println("다시 입력하세요.")
                     //                }
-                    // 메인으로 이동
+                    break
                 }
+
                 3 -> {
-                    println("요금안내 및 결제화면 메인으로 이동합니다")
-                    return main()
-                    // 관리자 모드로 이동
+                    break   // 메인으로 이동
                 }
-                4 -> {
+
+                4 -> {  // 관리자 모드로 이동
                     var admin = AdminCharge()
                     admin.changeMoney()
                 }
+
                 else -> {
                     println("다시 입력하세요.")
-                    return main()
+
                 }
             }; break
 

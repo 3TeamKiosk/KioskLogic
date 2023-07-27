@@ -1,9 +1,10 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.admin
 
 class AdminCharge {
-    fun changeMoney(){
+    fun changeMoney() {
         println("[대여비용 변경]")
-        var rentalMoney = mutableMapOf("1" to 1000, "2" to 2000, "3" to 3000, "4" to 4000, "5" to 5000)
+        var rentalMoney =
+            mutableMapOf("1" to 1000, "2" to 2000, "3" to 3000, "4" to 4000, "5" to 5000)
 
         while (true) {
             println("[1] 대여시간 추가/수정")
@@ -16,9 +17,7 @@ class AdminCharge {
                 1 -> addOrUpdateItem(rentalMoney)
                 2 -> deleteItem(rentalMoney)
                 3 -> printAllItems(rentalMoney)
-                4 -> {
-                    println("메인으로 이동합니다.")
-                    return main()}
+                4 -> break  // 메인으로
                 else -> println("다시 입력하세요.")
             }
         }

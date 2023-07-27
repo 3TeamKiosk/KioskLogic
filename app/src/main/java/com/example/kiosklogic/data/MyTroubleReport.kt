@@ -1,4 +1,6 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.data
+
+import com.example.kiosklogic.interfaces.TroubleReport
 
 
 class MyTroubleReport: TroubleReport<String, String> {

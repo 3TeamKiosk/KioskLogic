@@ -1,4 +1,6 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.user
+
+import com.example.kiosklogic.data.MapInformationData
 
 fun mapInformation() {
     val information = MapInformationData.getInstance()  // 싱글턴 인스턴스 불러오기
@@ -80,7 +82,7 @@ fun mapInformation() {
         if (input == 0) {
 //            mapInformationAdmin()   // 0 취소 버튼을 클릭 시 main으로 돌아가기
             println("메인으로 돌아갑니다.")
-            continue
+            break
         }
         if (input == 6) for (i in 1..5) println(information.getStationInformation(i) + "\n")  // 6은 모든 역의 정보를 가져오기
         else println(input?.let { information.getStationInformation(it) } + "\n") // 1~5 선택한 역 정보 가져오기
