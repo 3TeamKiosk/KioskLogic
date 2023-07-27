@@ -1,5 +1,8 @@
 import com.example.kiosklogic.LanguageClass
+import com.example.kiosklogic.MyTroubleReport
 import com.example.kiosklogic.englishLanguage
+import com.example.kiosklogic.mapInformation
+import com.example.kiosklogic.userReport
 import java.lang.NumberFormatException
 import java.util.Locale
 
@@ -7,7 +10,7 @@ import java.util.Locale
 fun main() {
     val languageClass = LanguageClass()
     println("==========따릉이에 오신 것을 환영합니다==========")
-
+    val myTroubleReport : MyTroubleReport = MyTroubleReport()
 
     while (true) {
 
@@ -41,11 +44,11 @@ fun main() {
             var select = readLine()!!.toInt()
             when (select) {
                 1 -> println("languageClass.goToFeesandPayment()")
-                2 -> println("languageClass.goToBreakdownReportPage()")
-                3 -> println("englishLanguage(languageClass)")
+                2 -> userReport(myTroubleReport)
+                3 -> englishLanguage(languageClass)
 
 
-                4 -> println("languageClass.goToMapGuidePage()")
+                4 -> mapInformation()
                 5 -> println("languageClass.goToAdminMode()")
                 else -> {
                     println("다시 선택해주세요.")
