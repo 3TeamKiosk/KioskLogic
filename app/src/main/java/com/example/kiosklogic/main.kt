@@ -1,4 +1,5 @@
 import com.example.kiosklogic.LanguageClass
+import com.example.kiosklogic.englishLanguage
 import java.lang.NumberFormatException
 import java.util.Locale
 
@@ -7,9 +8,10 @@ fun main() {
 
     println("==========따릉이에 오신 것을 환영합니다==========")
 
-    val languageClass = LanguageClass()
-    var currentLocale = languageClass.getCurrentLocal()
+
     while (true) {
+        val languageClass = LanguageClass()
+        var currentLocale = languageClass.getCurrentLocal()
         val kioskName = "따릉이"
         val a = when (currentLocale) {
             Locale("en") -> "Fees and Payment"
@@ -40,23 +42,9 @@ fun main() {
             when (select) {
                 1 -> languageClass.goToFeesandPayment()
                 2 -> languageClass.goToBreakdownReportPage()
-                3 -> {
-                    println("1.Changed language to English. 2.한국어로 변경하기")
-                    val languageSelect = readLine()!!.toInt()
-                    when (languageSelect) {
-                        1 -> {
-                            languageClass.changeLanguageToEnglish()
-                            println("Changed language to English.")
-                        }
-                        2 -> {
-                            languageClass.changeLanguageToKorean()
-                            println("한국어로 변경하였습니다.")
-                        }
-                        else -> {
-                            println("다시 선택해주세요.")
-                        }
-                    }
-                }
+                3 -> englishLanguage(languageClass)
+
+
                 4 -> languageClass.goToMapGuidePage()
                 5 -> languageClass.goToAdminMode()
                 else -> {
