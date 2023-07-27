@@ -21,11 +21,11 @@ fun payment(rentalMoney: MutableMap<String, Int>) {
                         println("[나의 금액]: ${myMoney}원")
                         println("${valueAtIndex - myMoney} 원 부족합니다.")
                         println("결제 실패. 메인으로 이동합니다.")
-                        return main()
+
                     }
                 } else if (check == 2) {
                     println("메인화면으로 이동합니다.")
-                    return main()
+
                 } else {
                     println("1, 2의 숫자중에서 다시 입력하세요.")
                     return payment(rentalMoney)

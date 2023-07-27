@@ -18,7 +18,7 @@ class AdminCharge {
                 3 -> printAllItems(rentalMoney)
                 4 -> {
                     println("메인으로 이동합니다.")
-                    return main()}
+                    }
                 else -> println("다시 입력하세요.")
             }
         }

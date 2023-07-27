@@ -23,7 +23,7 @@ fun userCharge(){
                             }
                             2 -> {
                                 println("메인으로 이동합니다")
-                                return main()
+
                             }
                             else -> {
                                 println("다시 입력하세요")
@@ -46,7 +46,7 @@ fun userCharge(){
                 }
                 3 -> {
                     println("요금안내 및 결제화면 메인으로 이동합니다")
-                    return main()
+
                     // 관리자 모드로 이동
                 }
                 4 -> {
@@ -55,7 +55,7 @@ fun userCharge(){
                 }
                 else -> {
                     println("다시 입력하세요.")
-                    return main()
+
                 }
             }; break
 
