@@ -1,9 +1,6 @@
 package com.example.kiosklogic
 
-class UserReport {
-    fun main() {
-        var adData = AdminReport()
-        val report = MyTroubleReport()
+    fun userReport(report: MyTroubleReport) {
         var operate = true
 
         println("이름과 고장 내역을 입력하세요")
@@ -24,12 +21,11 @@ class UserReport {
                     //report.showAllTroubleReports()
 
                     operate = false
+                    report.showReports()
                 }
-                report.showReport()
-                text?.let { name?.let { it1 -> report.troubleReportInsertion(it1, it) } }
+
                 val reportData = ReportDataBase(name ?: "", text?:"")
                 report.troubleReportInsertion(name ?: "", text ?: "")
-                //adData.receiveReportData(reportData)
                 report.addTroubleReport(reportData)
             } catch (e: IllegalArgumentException) {
                 println("Error")
@@ -38,4 +34,3 @@ class UserReport {
         }
     }
 
-}

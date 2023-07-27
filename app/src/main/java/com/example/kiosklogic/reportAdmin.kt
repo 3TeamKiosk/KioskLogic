@@ -3,18 +3,9 @@ package com.example.kiosklogic
 import java.util.*
 
 
+// 관리자 모드
+fun reportAdmin(report: MyTroubleReport) = with(Scanner(System.`in`)) {
 
-class AdminReport{
-    // UserReport로부터 전달받은 데이터를 저장할 변수
-    private var receivedReportData: ReportDataBase? = null
-
-    // UserReport로부터 데이터를 받는 함수
-    fun receiveReportData(reportData: ReportDataBase) {
-        receivedReportData = reportData
-    }
-
-    fun main() = with(Scanner(System.`in`)) {
-        val reportAdmin = MyTroubleReport()
 
         println("관리자 모드(고장 내역 관리)입니다.")
         println("수행할 기능을 선택하시오")
@@ -31,16 +22,15 @@ class AdminReport{
             when (num) {
                 1 -> {
                     println("현재 접수된 고장 신고 현황입니다.")
-                    reportAdmin.showAllTroubleReports()
-
+                   report.showReports()
                 }
                 2 -> {
                     println("수정하실 글의 작성자를 입력하세요")
                     val fixName = readLine() ?: ""
                     println("수정하실 글의 내용을 입력하세요")
                     val fixText = readLine() ?: ""
-                    if (reportAdmin.containsName(fixName)) {
-                        reportAdmin[fixName] = fixText
+                    if (report.containsName(fixName)) {
+                        report[fixName] = fixText
                     } else {
                         println("$fixName 작성자의 고장 내역이 없습니다.")
                     }
@@ -48,8 +38,8 @@ class AdminReport{
                 3 -> {
                     println("삭제하실 글의 작성자를 입력하세요.")
                     val removeName = readLine() ?: ""
-                    if (reportAdmin.containsName(removeName)) {
-                        reportAdmin.troubleReportRemove(removeName)
+                    if (report.containsName(removeName)) {
+                        report.troubleReportRemove(removeName)
                     } else {
                         println("$removeName 작성자의 고장 내역이 없습니다.")
                     }
@@ -64,4 +54,3 @@ class AdminReport{
             }
         }
     }
-}
