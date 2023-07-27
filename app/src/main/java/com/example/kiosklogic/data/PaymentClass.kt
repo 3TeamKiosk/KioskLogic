@@ -1,4 +1,6 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.data
+
+import com.example.kiosklogic.interfaces.PaymentInformation
 
 class PaymentClass : PaymentInformation<String, Int> {
     private var rentalTime = mapOf(
@@ -57,12 +59,12 @@ class PaymentClass : PaymentInformation<String, Int> {
 
                         else -> {
                             println("1, 2의 숫자중에서 다시 입력하세요.")
-                            return payment(rentalMoney)
+                            return com.example.kiosklogic.menu.user.payment(rentalMoney)
                         }
                     }
                 } else {
                     println("1~5 사이의 숫자를 입력하세요.")
-                    return payment(rentalMoney)
+                    return com.example.kiosklogic.menu.user.payment(rentalMoney)
                 }
             } catch (e: NumberFormatException) {
                 println("1~5 사이의 숫자를 입력하세요.")

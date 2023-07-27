@@ -1,4 +1,4 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.interfaces
 
 interface TroubleReport<name, text> {
     // 키와 값 추가하는 함수

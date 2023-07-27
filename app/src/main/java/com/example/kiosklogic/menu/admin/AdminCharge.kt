@@ -1,4 +1,4 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.admin
 
 class AdminCharge {
     fun changeMoney() {

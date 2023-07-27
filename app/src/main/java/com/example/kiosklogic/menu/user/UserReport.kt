@@ -1,4 +1,6 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.user
+
+import com.example.kiosklogic.data.MyTroubleReport
 
 fun userReport(report: MyTroubleReport) {
     var operate = true

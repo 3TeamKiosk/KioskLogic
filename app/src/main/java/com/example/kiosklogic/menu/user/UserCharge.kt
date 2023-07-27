@@ -1,4 +1,7 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.user
+
+import com.example.kiosklogic.data.PaymentClass
+import com.example.kiosklogic.menu.admin.AdminCharge
 
 fun userCharge() {
     var payService = PaymentClass()

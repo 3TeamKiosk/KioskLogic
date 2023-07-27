@@ -1,4 +1,6 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.user
+
+import com.example.kiosklogic.data.MapInformationData
 
 fun mapInformation() {
     val information = MapInformationData.getInstance()  // 싱글턴 인스턴스 불러오기

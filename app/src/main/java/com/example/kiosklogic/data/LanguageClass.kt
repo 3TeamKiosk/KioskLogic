@@ -1,5 +1,6 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.data
 
+import com.example.kiosklogic.interfaces.LanguageInterface
 import java.util.Locale
 
 class LanguageClass : LanguageInterface {

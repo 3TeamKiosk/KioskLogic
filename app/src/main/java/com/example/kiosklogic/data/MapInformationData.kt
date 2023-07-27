@@ -1,4 +1,6 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.data
+
+import com.example.kiosklogic.interfaces.MapInformationInterface
 
 class MapInformationData : MapInformationInterface {
     companion object {  // 싱글턴

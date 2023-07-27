@@ -1,4 +1,4 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.interfaces
 
 interface PaymentInformation<String, Int> {
     fun paymentInfo()

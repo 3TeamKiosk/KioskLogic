@@ -1,4 +1,6 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.user
+
+import com.example.kiosklogic.data.ChangeModeData
 
 fun changeMode() {
     val modeData = ChangeModeData.getInstance()

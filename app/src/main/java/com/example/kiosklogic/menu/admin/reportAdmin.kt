@@ -1,5 +1,6 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.admin
 
+import com.example.kiosklogic.data.MyTroubleReport
 import java.util.*
 
 

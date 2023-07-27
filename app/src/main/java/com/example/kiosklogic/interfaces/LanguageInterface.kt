@@ -1,4 +1,4 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.interfaces
 
 import java.util.Locale
 

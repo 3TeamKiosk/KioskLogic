@@ -1,6 +1,6 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.user
 
-import java.util.Locale
+import com.example.kiosklogic.data.LanguageClass
 
 fun englishLanguage(languageClass: LanguageClass) {
     var eng = languageClass

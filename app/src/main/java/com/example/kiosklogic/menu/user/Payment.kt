@@ -1,4 +1,4 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.menu.user
 
 // 맵을 사용한 것
 fun payment(rentalMoney: MutableMap<String, Int>) {
