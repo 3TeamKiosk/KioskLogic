@@ -19,14 +19,9 @@ package com.example.kiosklogic
                 if (text == "q") {
                     // q를 누르면 입력 종료
                     //report.showAllTroubleReports()
-
                     operate = false
-                    report.showReports()
                 }
-
-                val reportData = ReportDataBase(name ?: "", text?:"")
                 report.troubleReportInsertion(name ?: "", text ?: "")
-                report.addTroubleReport(reportData)
             } catch (e: IllegalArgumentException) {
                 println("Error")
             }
