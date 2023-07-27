@@ -1,5 +1,6 @@
 import com.example.kiosklogic.LanguageClass
 import com.example.kiosklogic.MyTroubleReport
+import com.example.kiosklogic.changeMode
 import com.example.kiosklogic.englishLanguage
 import com.example.kiosklogic.mapInformation
 import com.example.kiosklogic.userReport
@@ -49,7 +50,7 @@ fun main() {
 
 
                 4 -> mapInformation()
-                5 -> println("languageClass.goToAdminMode()")
+                5 -> changeMode()
                 else -> {
                     println("다시 선택해주세요.")
 
