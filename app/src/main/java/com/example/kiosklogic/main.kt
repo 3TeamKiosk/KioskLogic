@@ -1,14 +1,14 @@
-import com.example.kiosklogic.AdminCharge
-import com.example.kiosklogic.ChangeModeData
-import com.example.kiosklogic.LanguageClass
-import com.example.kiosklogic.MyTroubleReport
-import com.example.kiosklogic.changeMode
-import com.example.kiosklogic.englishLanguage
-import com.example.kiosklogic.mapInformation
-import com.example.kiosklogic.mapInformationAdmin
-import com.example.kiosklogic.reportAdmin
-import com.example.kiosklogic.userCharge
-import com.example.kiosklogic.userReport
+import com.example.kiosklogic.menu.admin.AdminCharge
+import com.example.kiosklogic.data.ChangeModeData
+import com.example.kiosklogic.data.LanguageClass
+import com.example.kiosklogic.data.MyTroubleReport
+import com.example.kiosklogic.menu.user.changeMode
+import com.example.kiosklogic.menu.user.englishLanguage
+import com.example.kiosklogic.menu.user.mapInformation
+import com.example.kiosklogic.menu.admin.mapInformationAdmin
+import com.example.kiosklogic.menu.admin.reportAdmin
+import com.example.kiosklogic.menu.user.userCharge
+import com.example.kiosklogic.menu.user.userReport
 import java.lang.NumberFormatException
 import java.util.Locale
 

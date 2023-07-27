@@ -1,4 +1,4 @@
-package com.example.kiosklogic
+package com.example.kiosklogic.interfaces
 
 interface MapInformationInterface {
     fun setStationName(index: Int, name: String)  // 역 이름 변경 (관리자모드)
