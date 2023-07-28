@@ -3,8 +3,8 @@ package com.example.kiosklogic.menu.user
 import com.example.kiosklogic.data.PaymentClass
 import com.example.kiosklogic.menu.admin.AdminCharge
 
-fun userCharge() {
-    var payService = PaymentClass()
+fun userCharge(payService: PaymentClass) {
+
     println("[1]요금안내 [2]결제하기 [3]메인 [4]관리자모드")
     var checkNum1 = readLine()!!.toInt()
     while (true) {
@@ -56,7 +56,7 @@ fun userCharge() {
 
                 4 -> {  // 관리자 모드로 이동
                     var admin = AdminCharge()
-                    admin.changeMoney()
+                    admin.changeMoney(payService)
                 }
 
                 else -> {

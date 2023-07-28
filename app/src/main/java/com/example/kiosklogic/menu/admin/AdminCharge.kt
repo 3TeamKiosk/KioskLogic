@@ -1,10 +1,11 @@
 package com.example.kiosklogic.menu.admin
 
-class AdminCharge {
-    fun changeMoney() {
+import com.example.kiosklogic.data.PaymentClass
+
+class AdminCharge() {
+    fun changeMoney(payService: PaymentClass) {
         println("[대여비용 변경]")
-        var rentalMoney =
-            mutableMapOf("1" to 1000, "2" to 2000, "3" to 3000, "4" to 4000, "5" to 5000)
+        var rentalMoney = payService.rentalMoney
 
         while (true) {
             println("[1] 대여시간 추가/수정")
