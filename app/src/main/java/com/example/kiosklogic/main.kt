@@ -67,12 +67,20 @@ fun main() {
             ?: emptyList<String>().withIndex()) {
             print("${index + 1}.$item ")
         }
-        print("\n입력:")
-        try {
-            var select = readLine()!!.toInt()
+        println("")
+        var select : Int?
+        while (true) {
+            try {
+                print("입력: ")
+                select = readLine()!!.toInt()
+                if (select in 1..5) break
+                else println("유효한 값이 아닙니다. 1 ~ 5를 입력해주세요")
+            } catch (e: NumberFormatException) {
+                println("숫자를 입력해주세요.")
+            }
+        }
+        if (select != null) {
             changeMode[mode]?.get(select - 1)?.invoke()
-        } catch (e: NumberFormatException) {
-            println("숫자를 입력해주세요.")
         }
     }
 }
